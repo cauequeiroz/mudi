@@ -7,7 +7,7 @@
 </head>
 <body>
 	<main>
-		<div class="product" th:each="product : ${order}">
+		<div class="product" th:each="product : ${products}">
 			<div class="product__image">
 				<img th:src="${product.imageUrl}" />	
 			</div>			
