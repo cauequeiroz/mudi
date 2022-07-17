@@ -1,4 +1,4 @@
-package br.com.cauequeiroz.mudi.model;
+package br.com.cauequeiroz.springadventure.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,10 +1,10 @@
-package br.com.cauequeiroz.mudi;
+package br.com.cauequeiroz.springadventure;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MudiApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {

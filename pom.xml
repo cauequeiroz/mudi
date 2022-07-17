@@ -8,9 +8,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.cauequeiroz</groupId>
-	<artifactId>mudi</artifactId>
+	<artifactId>spring-adventure</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mudi</name>
+	<name>spring-adventure</name>
 	<description>A project to learn Spring MVC</description>
 	<properties>
 		<java.version>18</java.version>

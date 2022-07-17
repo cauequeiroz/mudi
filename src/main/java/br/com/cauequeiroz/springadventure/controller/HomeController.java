@@ -1,11 +1,11 @@
-package br.com.cauequeiroz.mudi.controller;
+package br.com.cauequeiroz.springadventure.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import br.com.cauequeiroz.mudi.repository.ProductRepository;
+import br.com.cauequeiroz.springadventure.repository.ProductRepository;
 
 @Controller
 public class HomeController {

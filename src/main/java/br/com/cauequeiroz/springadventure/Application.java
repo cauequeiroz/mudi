@@ -1,13 +1,13 @@
-package br.com.cauequeiroz.mudi;
+package br.com.cauequeiroz.springadventure;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MudiApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MudiApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
