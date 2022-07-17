@@ -1,75 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Mudi - Test</title>
-<style>
-	body {
-		width: 800px;
-		margin: 20px auto;
-		font-family: sans-serif;
-	}
-	
-	.product {
-		display: flex;
-		flex-direction: row;
-		align-items: start;
-		margin-top: 20px;
-	}	
-	
-	.product img {
-		border: 1px solid #ccc;
-		width: 200px;
-		height: 200px;
-		object-fit: contain;
-		border-radius: 8px;
-		border-top-right-radius: 0;
-	}
-	
-	.product__info {
-		flex: 1;
-	}
-	
-	.product__info h3 {
-		margin: 0;
-		background-color: #34495e;
-		color: #ecf0f1;
-		padding: 20px;
-		border-top-right-radius: 8px;
-		border-bottom-right-radius: 8px;
-	}
-	
-	.product__info p {
-		margin: 12px 0 12px 20px;
-	}
-	
-	.product__description,
-	.product__url {
-		white-space: nowrap;	
-		overflow: hidden;
-		text-overflow: ellipsis;
-		width: 550px;
-	}
-	
-	.product__info a {
-		margin-left: 20px;
-		display: block;
-	}
-</style>
+	<meta charset="UTF-8">
+	<title>Mudi - Test</title>
+	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 	<main>
 		<div class="product" th:each="product : ${order}">
-			<img th:src="${product.imageUrl}" />
+			<div class="product__image">
+				<img th:src="${product.imageUrl}" />	
+			</div>			
 			<div class="product__info">
 				<h3 th:text=${product.name}></h3>
-				<p class="product__description" th:text="${product.description}"></p>			
-				<a href="javascript:;" class="product__url" th:text="${product.url}"></a>			
-				<p class="product__price" >
+				<p th:text="${product.description}"></p>			
+				<p>
 					<strong>Price:</strong> $<span th:text="${product.price}"></span>
-				</p>
-				<p class="product__date">
-					<strong>Date:</strong> <span th:text="${product.date}"></span>
 				</p>
 			</div>
 		</div>
