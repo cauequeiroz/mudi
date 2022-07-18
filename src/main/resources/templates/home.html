@@ -11,14 +11,15 @@
 	<main>
 		<nav class="menu">
 			<ul>
-				<li class="active"><a href="">all</a></li>
-				<li><a href="">waiting</a></li>
-				<li><a href="">approved</a></li>
-				<li><a href="">delivered</a></li>
+				<li th:classappend="${status} == null ? 'active'"><a href="/home">all</a></li>
+				<li th:classappend="${status} == 'WAITING' ? 'active'"><a href="/home/waiting">waiting</a></li>
+				<li th:classappend="${status} == 'APPROVED' ? 'active'"><a href="/home/approved">approved</a></li>
+				<li th:classappend="${status} == 'DELIVERED' ? 'active'"><a href="/home/delivered">delivered</a></li>
 			</ul>
 			
 			<a href="/product/create">create product</a>
 		</nav>
+		
 		<div class="product" th:each="product : ${products}">
 			<div class="product__image">
 				<img th:src="${product.imageUrl}" />	
@@ -28,6 +29,9 @@
 				<p th:text="${product.description}"></p>			
 				<p>
 					<strong>Price:</strong> $<span th:text="${product.price}"></span>
+				</p>
+				<p>
+					<strong>Status:</strong> <span th:text="${#strings.toLowerCase(product.status)}"></span>
 				</p>
 			</div>
 		</div>

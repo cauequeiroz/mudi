@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.cauequeiroz.springadventure.dto.ProductDTO;
 import br.com.cauequeiroz.springadventure.model.Product;
+import br.com.cauequeiroz.springadventure.model.Status;
 import br.com.cauequeiroz.springadventure.repository.ProductRepository;
 
 @Controller
@@ -25,6 +26,8 @@ public class ProductController {
 	@PostMapping("processCreate")
 	public String processCreate(ProductDTO productDTO) {
 		Product product = productDTO.toProduct();
+		product.setStatus(Status.WAITING);
+		
 		productRepository.save(product);
 		
 		return "redirect:/home";

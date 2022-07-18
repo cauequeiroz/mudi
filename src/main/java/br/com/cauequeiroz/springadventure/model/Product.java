@@ -1,6 +1,8 @@
 package br.com.cauequeiroz.springadventure.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,6 +23,9 @@ public class Product {
 	private String imageUrl;
 	
 	private double price;
+	
+	@Enumerated(EnumType.STRING)
+	private Status status;
 
 	public Integer getId() {
 		return id;
@@ -60,5 +65,13 @@ public class Product {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
 	}	
 }
