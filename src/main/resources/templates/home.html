@@ -25,6 +25,7 @@
 				<img th:src="${product.imageUrl}" />	
 			</div>			
 			<div class="product__info">
+				<a th:href="'/product/remove?id=' + ${product.id}" class="delete">remove</a>
 				<h3 th:text=${product.name}></h3>
 				<p th:text="${product.description}"></p>			
 				<p>

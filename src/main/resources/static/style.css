@@ -48,6 +48,7 @@ body {
 	flex-direction: row;
 	align-items: start;
 	margin-top: 20px;
+	position: relative;
 }
 
 .product__image {
@@ -83,6 +84,12 @@ body {
 .product__info p strong {
 	font-weight: bold;
 	color: #34495e;
+}
+
+.product__info .delete {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
 }
 
 form span {

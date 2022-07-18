@@ -1,5 +1,7 @@
 package br.com.cauequeiroz.springadventure.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,6 +31,13 @@ public class ProductController {
 		product.setStatus(Status.WAITING);
 		
 		productRepository.save(product);
+		
+		return "redirect:/home";
+	}
+	
+	@GetMapping("remove")
+	public String processRemove(HttpServletRequest request) {
+		productRepository.deleteById(Integer.valueOf(request.getParameter("id")));
 		
 		return "redirect:/home";
 	}
