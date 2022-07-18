@@ -86,7 +86,7 @@ body {
 	color: #34495e;
 }
 
-.product__info .delete {
+.product__info .actions {
 	position: absolute;
 	right: 10px;
 	bottom: 10px;

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Spring Adventure</title>
+	<link rel="stylesheet" href="/reset.css">
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<h1>Update product</h1>
+	<hr />
+	
+	<form th:object="${product}" method="POST" action="processUpdate">
+		<input type="hidden" th:field="*{id}" />
+		<p>
+			<span>name:</span> <input type="text" th:field="*{name}" />
+		</p>
+		<p>
+			<span>description:</span> <textarea th:field="*{description}"></textarea>
+		</p>
+		<p>
+			<span>image url:</span> <input type="text" th:field="*{imageUrl}" />
+		</p>
+		<p>
+			<span>price:</span> <input type="text" th:field="*{price}" />
+		</p>
+		<p>
+			<span>status:</span> 
+			<select th:field="*{status}">
+				<option value="WAITING">waiting</option>
+				<option value="APPROVED">approved</option>
+				<option value="DELIVERED">delivered</option>
+			</select>
+		</p>
+		
+		<button>update</button>
+	</form>	
+	
+	<hr/>
+	<a href="/home">[voltar]</a> 
+</body>
+</html>

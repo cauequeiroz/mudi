@@ -73,5 +73,13 @@ public class Product {
 
 	public void setStatus(Status status) {
 		this.status = status;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", imageUrl=" + imageUrl
+				+ ", price=" + price + ", status=" + status + "]";
 	}	
+	
+	
 }

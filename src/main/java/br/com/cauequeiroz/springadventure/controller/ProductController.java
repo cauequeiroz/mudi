@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,15 +31,30 @@ public class ProductController {
 		Product product = productDTO.toProduct();
 		product.setStatus(Status.WAITING);
 		
-		productRepository.save(product);
+		productRepository.save(product);		
+		return "redirect:/home";
+	}
+	
+	@GetMapping("update")
+	public String updateView(HttpServletRequest request, Model model) {
+		int id = Integer.valueOf(request.getParameter("id"));
+		Product product = productRepository.findById(id).get();		
 		
+		model.addAttribute("product", product);
+		return "update";
+	}
+	
+	@PostMapping("processUpdate")	
+	public String processUpdate(Product product) {
+		productRepository.save(product);		
 		return "redirect:/home";
 	}
 	
 	@GetMapping("remove")
 	public String processRemove(HttpServletRequest request) {
-		productRepository.deleteById(Integer.valueOf(request.getParameter("id")));
+		int id = Integer.valueOf(request.getParameter("id"));
 		
+		productRepository.deleteById(id);		
 		return "redirect:/home";
 	}
 }
