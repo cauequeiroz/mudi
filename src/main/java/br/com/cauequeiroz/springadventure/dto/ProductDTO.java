@@ -1,34 +1,16 @@
-package br.com.cauequeiroz.springadventure.model;
+package br.com.cauequeiroz.springadventure.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import br.com.cauequeiroz.springadventure.model.Product;
 
-@Entity
-@Table(name = "products")
-public class Product {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	
+public class ProductDTO {
+
 	private String name;
-	
+
 	private String description;
-	
+
 	private String imageUrl;
-	
+
 	private double price;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
@@ -60,5 +42,15 @@ public class Product {
 
 	public void setPrice(double price) {
 		this.price = price;
-	}	
+	}
+
+	public Product toProduct() {
+		Product product = new Product();
+		product.setName(name);
+		product.setDescription(description);
+		product.setImageUrl(imageUrl);
+		product.setPrice(price);
+		
+		return product;
+	}
 }

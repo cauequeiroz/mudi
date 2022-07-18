@@ -4,6 +4,45 @@ body {
 	font-family: sans-serif;
 }
 
+.menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.menu ul {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+}
+
+.menu ul li {
+	padding: 10px;
+	border-radius: 8px;
+}
+
+.menu ul li.active {
+	background-color: #34495e;
+	color: #ecf0f1;
+}
+
+
+.menu > a { /* create button */ 
+	background-color: #34495e;
+	color: #ecf0f1;
+	border: none;
+	border-radius: 8px;
+	padding: 10px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.menu ul li a {
+	text-decoration: none;
+	color: inherit;
+}
+
 .product {
 	display: flex;
 	flex-direction: row;
@@ -34,9 +73,19 @@ body {
 	color: #ecf0f1;
 	padding: 20px;
 	border-top-right-radius: 8px;
-	border-bottom-right-radius: 8px;
+	border-bottom-right-radius: 8px;	
 }
 
 .product__info p {
 	margin: 12px 20px;
+	line-height: 20px;
+}
+.product__info p strong {
+	font-weight: bold;
+	color: #34495e;
+}
+
+form span {
+	display: inline-block;
+	width: 100px;
 }

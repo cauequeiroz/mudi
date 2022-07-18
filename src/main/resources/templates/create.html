@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Spring Adventure</title>
+	<link rel="stylesheet" href="/reset.css">
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<h1>Create new product</h1>
+	<hr />
+	
+	<form method="POST" action="processCreate">
+		<p>
+			<span>name:</span> <input type="text" name="name" />
+		</p>
+		<p>
+			<span>description:</span> <textarea name="description"></textarea>
+		</p>
+		<p>
+			<span>image url:</span> <input type="text" name="imageUrl" />
+		</p>
+		<p>
+			<span>price:</span> <input type="text" name="price" />
+		</p>
+		
+		<button>create</button>
+	</form>	
+	
+	<hr/>
+	<a href="/home">[voltar]</a> 
+</body>
+</html>
